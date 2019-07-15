@@ -11,6 +11,8 @@ class FetchTodosJob < ApplicationJob
   private
 
   def notify
-    puts "**** Active job completed!"
+    ActionCable.server.broadcast "web_notifications", {
+        message: '<p>Job Completed!!!</p>'
+    }
   end
 end

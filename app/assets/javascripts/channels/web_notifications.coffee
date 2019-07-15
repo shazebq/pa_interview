@@ -8,4 +8,5 @@ App.web_notifications = App.cable.subscriptions.create "WebNotificationsChannel"
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     $('#message').html data['message']
+    $('#todos').html data['todos']
     $('#fetch-button').attr("disabled", data['is_button_disabled'])

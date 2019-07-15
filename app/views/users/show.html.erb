@@ -7,6 +7,14 @@
 
   <strong><span id="message">Ready</span></strong>
 
+  <div id="todos">
+    <ul>
+      <% @todos.each do |todo| %>
+        <li><%= todo.title %></li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
 
 

@@ -1,8 +1,12 @@
 <%#= react_component("UserShow", { user: @user }) %>
 
-<h4><%= @user.name %></h4>
+<div class="container">
+  <h5><%= @user.name %></h5>
 
-<div id="messages"></div>
+  <%= button_to "Fetch Todos", '/todos', method: :post, remote: true, params: {userId: @user.id} %>
 
-<%= button_to "Fetch Todos", '/todos', method: :post, remote: true, params: {userId: @user.id} %>
+  <strong><span id="message">Ready</span></strong>
+
+</div>
+
 

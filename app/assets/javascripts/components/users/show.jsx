@@ -3,8 +3,9 @@ class UserShow extends React.Component {
     super(props);
 
     this.state = {
-      title: this.props.title || '',
-      content: this.props.content|| ''
+      // title: this.props.title || '',
+      // content: this.props.content|| '',
+        userId: this.props.user.id
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,12 +15,16 @@ class UserShow extends React.Component {
     event.preventDefault()
 
     $.ajax({
-      url: '/todos',
+      url: 'https://jsonplaceholder.typicode.com/todos',
       dataType: 'json',
-      type: 'POST',
+      type: 'GET',
       data: this.state,
-      success: (data) => {  },
-      error: (data) => {  }
+      success: (data) => {
+
+      },
+      error: (data) => {
+
+      }
     });
   }
 

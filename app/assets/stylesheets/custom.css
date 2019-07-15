@@ -5,3 +5,8 @@ form {
 #message {
    margin-left: 20px;
 }
+
+body {
+    font-family: sans-serif;
+    margin: 30px;
+}

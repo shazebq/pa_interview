@@ -1,8 +1,6 @@
 class TodosController < ApplicationController
 
   def create
-    # disable the button, and display "in-progress"
-
     # run the job
     FetchTodosJob.perform_later(params['userId'])
 

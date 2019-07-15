@@ -3,7 +3,7 @@ class FetchTodosJob < ApplicationJob
 
   before_enqueue :processing_notification
 
-  after_perform :notify
+  after_perform :ready_notification
 
   def perform(user_id)
     response = HTTParty.get("https://jsonplaceholder.typicode.com/todos?userId=#{user_id}", format: :plain)
@@ -17,15 +17,17 @@ class FetchTodosJob < ApplicationJob
 
   private
 
-  def notify
+  def ready_notification
     ActionCable.server.broadcast "web_notifications", {
-        message: '<strong>Ready</strong>'
+        message: '<strong>Ready</strong>',
+        is_button_disabled: false
     }
   end
 
   def processing_notification
     ActionCable.server.broadcast "web_notifications", {
-        message: '<strong>Processing...</strong>'
+        message: '<strong>Processing...</strong>',
+        is_button_disabled: true
     }
   end
 end

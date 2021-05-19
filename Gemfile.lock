@@ -96,7 +96,9 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -113,7 +115,8 @@ GEM
     pry-byebug (3.6.0)
       byebug (~> 10.0)
       pry (~> 0.10)
-    puma (3.12.0)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
@@ -229,7 +232,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   pg (~> 0.18)
   pry-byebug
-  puma (~> 3.0)
+  puma (~> 4.3)
   rails (~> 5.2, >= 5.2.2)
   react-rails (~> 2.4, >= 2.4.4)
   rspec-rails (~> 3.5, >= 3.5.2)
